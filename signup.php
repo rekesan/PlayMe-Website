@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 Page Still on Maintenance!
 <div><button onclick="goBack()">Go Back</button></div>
 
