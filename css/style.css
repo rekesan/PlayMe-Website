@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 1.03em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 705px;
+    margin: 0 auto;
+    background-color: rgb(20, 20, 20);
+}
+
+.formLogin{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.formLogin div{
+    text-align: center;
+}
+
+.formLogin div a img{
+    margin-bottom: 10px;
+}
+
+.formLogin div div input{
+    padding: 5px 10px;
+    width: 245px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px 0;
+}
+
+.formLogin div div .login{
+    padding: 5px 14px;
+    width: 90px;
+    margin-right: 9px;
+    cursor: pointer;
+}
+
+.formLogin div div a{
+    color: white;
+}
+
+.formLogin div p{
+    background-color: rgb(255, 70, 70);
+    color: white;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.header{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11.5em;
+}
+
+.header div form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
+.header div form label{
+    color: white;
+    background-color: rgb(25, 129, 25);
+    font-size: .9em;
+    border-radius: 10px;
+    padding: 3.5px 15px;
+}
+.header div form input{
+    background-color: rgb(255, 70, 70);
+    font-size: .9em;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: transform 200ms;
+}
+
+.header div form input:hover{
+    transform: scale(1.1);
+}
+
+.content{
+    margin: 2em 0;
+    text-align: center;
+}
+
+.content .player{
+    height: 300px;
+    overflow: hidden;
+    border: 2px solid rgb(196, 196, 196);
+}
+
+.content .player img{
+    opacity: .7;
+    margin-top: -120px;
+}
+
+.content .secondlayer{
+    display: flex;
+    margin-top: 1em;
+    height: 150px;
+    gap: 1em;
+}
+
+.content .game{
+    width: 33%;
+    overflow: hidden;
+    border: 2px solid rgb(196, 196, 196);
+}
+.content .tournament{
+    width: 33%;
+    overflow: hidden;
+    border: 2px solid rgb(196, 196, 196);
+}
+
+.content .organization{
+    width: 33%;
+    overflow: hidden;
+    border: 2px solid rgb(196, 196, 196);
+}
+
+.content .text .crop{
+    width: 375px;
+    height: 200px;
+    margin-top: -25px;
+    margin-left: -70px;
+    opacity: .7;
+}
+
+.content .text{
+    position: relative;
+}
+
+.content .text img{
+    transition: opacity 200ms;
+}
+
+.content .text label{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:2.5em;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 2px 2px 5px rgb(41, 41, 41);
+    cursor: pointer;
+    transition: transform 500ms;
+    transform-origin: bottom;
+}
+
+.content .text:hover img{
+    opacity: .5;
+}
+
+.content .text:hover label{
+    transform: scale(1.2);
+}
