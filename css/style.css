@@ -1,14 +1,37 @@
 *{
     padding: 0;
     margin: 0;
+    text-decoration: none;
     font-size: 1.03em;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    --borderPl: rgb(255, 186, 0);
 }
 
 body{
     width: 705px;
     margin: 0 auto;
     background-color: rgb(20, 20, 20);
+}
+
+.maintenance{
+    height: 200px;
+    color: rgb(255, 70, 70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.maintenance div button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(255, 186, 0);
 }
 
 .formLogin{
@@ -35,13 +58,25 @@ body{
 
 .formLogin div div .login{
     padding: 5px 14px;
-    width: 90px;
-    margin-right: 9px;
+    width: 125px;
+    margin-right: 11px;
     cursor: pointer;
+    background-color: rgb(255, 186, 0);
+    transition: background-color 200ms;
+}
+
+.formLogin div div .login:hover{
+    background-color: rgb(255, 230, 0);
 }
 
 .formLogin div div a{
     color: white;
+    font-size: .8em;
+    transition: color 200ms;
+}
+
+.formLogin div div a:hover{
+    color: rgb(72, 197, 255);
 }
 
 .formLogin div p{
@@ -99,8 +134,6 @@ body{
 
 .content .player{
     height: 300px;
-    overflow: hidden;
-    border: 2px solid rgb(196, 196, 196);
 }
 
 .content .player img{
@@ -117,19 +150,13 @@ body{
 
 .content .game{
     width: 33%;
-    overflow: hidden;
-    border: 2px solid rgb(196, 196, 196);
 }
 .content .tournament{
     width: 33%;
-    overflow: hidden;
-    border: 2px solid rgb(196, 196, 196);
 }
 
 .content .organization{
     width: 33%;
-    overflow: hidden;
-    border: 2px solid rgb(196, 196, 196);
 }
 
 .content .text .crop{
@@ -142,6 +169,9 @@ body{
 
 .content .text{
     position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgb(196, 196, 196);
 }
 
 .content .text img{
@@ -172,4 +202,61 @@ body{
 
 .content .text:hover label{
     transform: scale(1.2);
+}
+
+.content .title{
+    color: white;
+    font-size: 2em;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+.content .data{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    word-wrap: normal;
+    gap: 2em;
+}
+
+.content .data .pdata{
+    border: 1px solid var(--borderPl);
+    border-radius: 20px;
+    width: 200px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(54, 54, 54);
+}
+
+.content .data .pdata img{
+    width: 180px;
+}
+
+.content .data .pdata .name{
+    position: absolute;
+    top: 80%;
+    right: 0;
+    left: 0;
+    background-color: var(--borderPl);
+    padding: 5px 0px;
+}
+
+.content .data .pdata .name input{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.content .details{
+    text-align: left;
+    margin-top: 50px;
+    padding-left: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+.content .details label{
+    font-style: italic;
+    font-weight: normal;
 }

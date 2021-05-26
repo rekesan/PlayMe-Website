@@ -4,14 +4,12 @@
         $username = $_POST["usrnm"];
         $password = $_POST["psswrd"];
 
-        require_once "db.php";
+        //require_once "db.php";
         require_once "function.php";
 
         if(empty_input($username, $password)){
             $_SESSION["errorMessage"] = "Please fill the fields.";
             header("location: ../login.php");
-            //header("location: ../login.php?error=empty");
-            exit();
         }
         
         if($username == "admin" & $password == "password"){
@@ -19,8 +17,10 @@
             header("location: ../");
         }
         else{
-            // header("location: ../login.php?error=wronginput");
             $_SESSION["errorMessage"] = "Invalid Username and/or Passsword.";
             header("location: ../login.php");
         }
+    }
+    else{
+        header("location: ../");
     }
