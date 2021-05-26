@@ -13,7 +13,6 @@
 
             $result = $conn->query($qry);
 
-            
             while($column = mysqli_fetch_assoc($result)){
         ?>
             <div class="pdata">
