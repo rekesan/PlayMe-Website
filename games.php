@@ -3,7 +3,7 @@
 ?>
 <div class="content">
     <div class="title">
-        Players
+        Games
     </div>
     <div class="data">
         <?php
@@ -16,9 +16,29 @@
             while($column = mysqli_fetch_assoc($result)){
         ?>
             <div class="pdata">
-                <img src="image/player-image.png">
-                <form action="include/player.inc.php?pID=<?php echo $column["pID"];?>" method="POST" class="name"> 
-                    <input type="submit" value="<?php echo $column["pName"]; ?>">
+                <img src="
+                    <?php
+                        switch($column["gName"]){
+                            case "Call of Duty":
+                                echo "image/COD.jpg";
+                                break;
+                            case "League of Legends":
+                                echo "image/League.png";
+                                break;
+                            case "Mobile Legends":
+                                echo "image/ML.jpg";
+                                break;
+                            case "Valorant":
+                                echo "image/valorant.png";
+                                break;
+                            default:
+                                echo "image/none.png";
+                                break;
+                        }
+                    ?>
+                ">
+                <form action="include/game.inc.php?gID=<?php echo $column["gID"];?>" method="POST" class="name"> 
+                    <input type="submit" value="<?php echo $column["gName"]; ?>">
                 </form>
             </div>
         <?php
@@ -28,27 +48,25 @@
 
     <div class="details">
         <?php
-            if(isset($_SESSION["pID"])){
-                $pID = $_SESSION["pID"];
+            if(isset($_SESSION["gID"])){
+                $gID = $_SESSION["gID"];
                 
-                $qry = "SELECT * FROM player WHERE pID='$pID'";
+                $qry = "SELECT * FROM game WHERE gID='$gID'";
 
-                $PlayerDataResult = $conn->query($qry);
+                $GameDataResult = $conn->query($qry);
                 
-                $column = mysqli_fetch_assoc($PlayerDataResult);
+                $column = mysqli_fetch_assoc($GameDataResult);
 
-                echo "<label>Name: </label>" . $column["pName"];
+                echo "<label>Name: </label>" . $column["gName"];
                 echo "<br>";
-                echo "<label>Start of Pro Career: </label>" . $column["pStartDate"];
+                echo "<label>Description: </label>" . $column["gDescription"];
                 echo "<br>";
-                echo "<label>Nationality: </label>" . $column["pNationality"];
+                echo "<label>Type: </label>" . $column["gType"];
                 echo "<br>";
-                echo "<label>Coach: </label>" . $column["pCoach"];
-                echo "<br>";
-                echo "<label>Birth Date: </label>" . $column["pBDate"];
+                echo "<label>Release Date: </label>" . $column["gReleaseDate"];
                 echo "<br>";
 
-                unset($_SESSION["pID"]);
+                unset($_SESSION["gID"]);
             }
         ?>
     </div>
